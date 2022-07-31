@@ -2,7 +2,7 @@
  # File Name: build_raspberry_kmod.yml
  # Author: ecras_y@163.com
  # Created Time: 2022-07-16 15:20:22 UTC
- # Modified Time: 2022-07-30 05:15:52 UTC
+ # Modified Time: 2022-07-31 05:42:30 UTC
  # Description: Thanks to bigbugcc @ https://github.com/bigbugcc/OpenWrts
  # Description: Thanks to P3TERX @ https://github.com/P3TERX/Actions-OpenWrt
  # Description: Thanks to SuLingGG @ https://github.com/SuLingGG/OpenWrt-Rpi
@@ -380,6 +380,8 @@ jobs:
           echo "dtparam=i2c_arm=on,audio=on" >> target/linux/bcm27xx/image/config.txt
           mkdir -p files/www/snapshots
           cp -r bin/targets files/www/snapshots
+          cp -r bin/packages files/www/snapshots
+          ls files/www/snapshots/$DEVICE_PLATFORM/
           make package/install -j$(nproc) || make package/install -j1 V=s
           make target/install -j$(nproc) || make target/install -j1 V=s
           make json_overview_image_info
