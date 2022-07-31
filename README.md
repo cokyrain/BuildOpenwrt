@@ -14,8 +14,7 @@ Build OpenWrt with actions
 2. raspberry：树莓派4B系统格式workflows
 3. 该系列workflows会自动保存toolchain至release
 4. 重复编译时会自动拉取已经编译保存的toolchain  
-5. kmod打包了Lede大的代码库里除了cjdns之外的所有packages  
-6. cjdns会编译出错，所以剔除了这个包
+5. kmod打包了Lede大的代码库里所有的packages  
 
 ### 不使用本地kmod软件源workflows文件名带有default结尾
 1. x86-64：x86-64系统格式workflows
