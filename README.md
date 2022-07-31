@@ -2,38 +2,38 @@
 Build OpenWrt with actions
 
 ## 项目介绍
-使用GitHub Actions自动化编译L大的OpenWrt固件  
-开启默认支持IPv6路由功能  
+使用GitHub Actions自动化编译L大的OpenWrt固件。  
+开启默认支持IPv6路由功能。  
 
 ## 支持X86-64和树莓派4B
 如果actions的虚拟机空间爆炸，  
 可以考虑将ext4和squash的workflow分开进行。
 
 ### 预配置本地kmod软件源workflows文件名带有kmod结尾
-1. x86-64：x86-64系统格式workflows
-2. raspberry：树莓派4B系统格式workflows
-3. 该系列workflows会自动保存toolchain至release
-4. 重复编译时会自动拉取已经编译保存的toolchain  
-5. kmod打包了Lede大的代码库里所有的packages  
+1. x86-64：x86-64系统格式workflows。  
+2. raspberry：树莓派4B系统格式workflows。  
+3. 该系列workflows会自动保存toolchain至release。  
+4. 重复编译时会自动拉取已经编译保存的toolchain。  
+5. kmod打包了Lede大的代码库里所有的packages。  
 
 ### 不使用本地kmod软件源workflows文件名带有default结尾
-1. x86-64：x86-64系统格式workflows
-2. raspberry：树莓派4B系统格式workflows
-3. 该系列workflows会自动保存toolchain至release
-4. 重复编译时会自动拉取已经编译保存的toolchain
+1. x86-64：x86-64系统格式workflows。  
+2. raspberry：树莓派4B系统格式workflows。  
+3. 该系列workflows会自动保存toolchain至release。  
+4. 重复编译时会自动拉取已经编译保存的toolchain。  
 
 ### 定制脚本
 1. feeds.sh：修改该文件添加额外的package，  
-不建议一次性添加kenzo的包进行编译，很多编译冲突。
-2. diy.sh：修改该文件自定义固件系统选项
+不建议一次性添加kenzo的包进行编译，很多编译冲突。 
+2. diy.sh：修改该文件自定义固件系统选项。  
 3. fix.sh: 修正某些软件包package的编译错误。  
 
 ### Release固件发布
-1. openwrt-x86-64-Kmod：预配置本地kmod软件源的x86-64固件
-2. openwrt-x86-64：不使用本地kmod软件源的x86-64固件
-3. openwrt-bcm27xx-bcm2711-Kmod：预配置本地kmod软件源的树莓派4B固件
-4. openwrt-bcm27xx-bcm2711：不使用本地kmod软件源的树莓派4B固件
-5. toolchain-image：编译工具链，方便workflow一次编译多次使用
+1. openwrt-x86-64-Kmod：预配置本地kmod软件源的x86-64固件。  
+2. openwrt-x86-64：不使用本地kmod软件源的x86-64固件。  
+3. openwrt-bcm27xx-bcm2711-Kmod：预配置本地kmod软件源的树莓派4B固件。  
+4. openwrt-bcm27xx-bcm2711：不使用本地kmod软件源的树莓派4B固件。  
+5. toolchain-image：编译工具链，方便workflow一次编译多次使用。  
 
 ### 文件系统固件说明
 1. squash文件系统固件支持系统重置，  
