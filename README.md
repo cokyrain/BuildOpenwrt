@@ -26,6 +26,7 @@ Build OpenWrt with actions
 1. feeds.sh：修改该文件添加额外的package，  
 不建议一次性添加kenzo的包进行编译，很多编译冲突。
 2. diy.sh：修改该文件自定义固件系统选项
+3. fix.sh: 修正某些软件包package的编译错误。  
 
 ### Release固件发布
 1. openwrt-x86-64-Kmod：预配置本地kmod软件源的x86-64固件
@@ -43,28 +44,28 @@ Build OpenWrt with actions
   进行分区大小调整。
 
 ### 代理 设置说明
-1. 这个版本的passwall的适应性没以前的强，但还是比passwall2好用    
+1. 目前这几个版本的passwall还是比passwall2好用。    
 2. 网络->Lan->基本设置->静态地址->使用自定义的 DNS 服务器：  
-  请填写路由器地址或者最好是当地ISP服务商提供的IPv4 DNS地址  
+  请填写路由器地址或者最好是当地ISP服务商提供的IPv4 DNS地址。  
   网关地址请留空，系统会设置默认网关地址，  
-  否则“状态->概览”会将Lan口信息显示为Wan口信息  
+  否则“状态->概览”会将Lan口信息显示为Wan口信息。  
 3. IPv6设置->通告的 DNS 服务器:  
-  请填写当地ISP服务商提供的IPv6 DNS地址 
+  请填写当地ISP服务商提供的IPv6 DNS地址。 
 4. 当地ISP服务商提供的DNS地址查看方法：  
-  PPoE拨号方式：主菜单进入“状态->概览”，可以查看  
-  DHCP和静态IP方式：请查看上级路由提供的信息  
+  PPPoE拨号方式：主菜单进入“状态->概览”，可以查看。  
+  DHCP和静态IP方式：请查看上级路由提供的信息。  
 5. 尝试添加passwall2，不好用，使用分流模式不但无法上网，  
-  关闭功能之后整个机器都无法连接DNS    
-  建议使用passwall或者ShadowSocksR Plus  
+  关闭功能之后整个机器都无法连接DNS。    
+  建议使用passwall或者ShadowSocksR Plus。  
 6. passwall的分流模式和ShadowSocksR Plus目前测试良好，  
-  vultr和banwagon节点都挺稳定，基本没有出现断流抽风  
+  vultr和banwagon节点都挺稳定，基本没有出现断流抽风。  
 7. 建议使用kmod固件，里面自带的软件包本地源，  
-  是和固件一起编译生成的，不会出现类库冲突问题  
+  是和固件一起编译生成的，不会出现类库冲突问题。  
 8. diy.sh将默认shell更改为bash了，  
-  所以在make menuconfig里面需要激活选择bash  
-9. 剔除turbo acc和chinadns-ng  
-  测试中发现，1000M网络，这两个软件反而负作用  
-  需要这两个软件的，可以在“系统->软件包”中单独安装
+  所以在make menuconfig里面需要激活选择bash。  
+9. 剔除turbo acc和chinadns-ng：  
+  测试中发现，1000M网络，这两个软件反而负作用。  
+  需要这两个软件的，可以在“系统->软件包”中单独安装。
   
   
   
