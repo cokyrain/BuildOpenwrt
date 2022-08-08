@@ -14,24 +14,24 @@ echo "Changing default LAN IP to 192.168.2.1"
 [ -e package/base-files/files/bin/config_generate ] && sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate 
 
 # 替换默认ash为bash
-echo "Changing default shell from ash to bash"
-[ -e package/base-files/files/etc/passwd ] && sed -i 's/\/bin\/ash/\/bin\/bash/g' package/base-files/files/etc/passwd
+#echo "Changing default shell from ash to bash"
+#[ -e package/base-files/files/etc/passwd ] && sed -i 's/\/bin\/ash/\/bin\/bash/g' package/base-files/files/etc/passwd
 
 # 替换默认banner
-echo "Replacing default ssh banner with $GITHUB_WORKSPACE/data/banner"
-rm -rf package/base-files/files/etc/banner
-cp $GITHUB_WORKSPACE/data/banner package/base-files/files/etc/banner
+#echo "Replacing default ssh banner with $GITHUB_WORKSPACE/data/banner"
+#rm -rf package/base-files/files/etc/banner
+#cp $GITHUB_WORKSPACE/data/banner package/base-files/files/etc/banner
 
 # 添加model修改脚本
-echo "Adding model.sh"
-cp $GITHUB_WORKSPACE/data/model.sh package/base-files/files/etc/
-chmod +x package/base-files/files/etc/model.sh
+#echo "Adding model.sh"
+#cp $GITHUB_WORKSPACE/data/model.sh package/base-files/files/etc/
+#chmod +x package/base-files/files/etc/model.sh
 
 # 添加IPv6启动脚本
-echo "Adding 99-ipv6"
-mkdir -p package/base-files/files/etc/hotplug.d/iface
-cp $GITHUB_WORKSPACE/data/99-ipv6 package/base-files/files/etc/hotplug.d/iface/99-ipv6
-chmod +x package/base-files/files/etc/hotplug.d/iface/99-ipv6
+#echo "Adding 99-ipv6"
+#mkdir -p package/base-files/files/etc/hotplug.d/iface
+#cp $GITHUB_WORKSPACE/data/99-ipv6 package/base-files/files/etc/hotplug.d/iface/99-ipv6
+#chmod +x package/base-files/files/etc/hotplug.d/iface/99-ipv6
 
 # 替换默认theme
 # [ -e feeds/luci/collections/luci/Makefile ] && sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
