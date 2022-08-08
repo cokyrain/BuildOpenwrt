@@ -10,20 +10,20 @@
 
 
 # passwall
-echo "Adding xiaorouji passwall"
-echo "src-git PWpackages https://github.com/xiaorouji/openwrt-passwall.git;packages" >> feeds.conf.default
-echo "src-git PWluci https://github.com/xiaorouji/openwrt-passwall.git;luci" >> feeds.conf.default
+#echo "Adding xiaorouji passwall"
+#echo "src-git PWpackages https://github.com/xiaorouji/openwrt-passwall.git;packages" >> feeds.conf.default
+#echo "src-git PWluci https://github.com/xiaorouji/openwrt-passwall.git;luci" >> feeds.conf.default
 
 # passwall2
-echo "Adding xiaorouji passwall2"
-echo "src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;main" >> feeds.conf.default
+#echo "Adding xiaorouji passwall2"
+#echo "src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;main" >> feeds.conf.default
 
 # ssrp
 echo "Adding ShadowSocksR Plus+"
 echo "src-git ssrp https://github.com/fw876/helloworld.git;master" >> feeds.conf.default
 
 # add argon theme
-echo "Adding theme argon"
-echo "src-git carbon https://github.com/ecrasy/openwrt-package.git;master" >> feeds.conf.default
+#echo "Adding theme argon"
+#echo "src-git carbon https://github.com/ecrasy/openwrt-package.git;master" >> feeds.conf.default
 
 echo "Adding Feeds Completed!!!"
